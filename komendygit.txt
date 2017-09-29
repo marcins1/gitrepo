@@ -1,0 +1,8 @@
+git pull - pobiera zmieny z repo zdalnego i wgrywa zmiany, nowe
+
+git add . - dodaje wszystkie zmiany do repo
+git commit -m "komentarz" - tworzy „zdjęcie"
+git push - wysyła zdjęcie do repo zdalnego
+
+cellpadding-odstep miedzy tekstem a krawedzia
+cellspacing-pdstep miedzy komorka a druga komorka 
