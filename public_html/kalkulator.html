@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="wDesign">
+	<title>Kalkulator</title>
+  <style>h1 {background-color: red;}</style>
+</head>
+
+<body>
+	<h1>Witam witam!</h1>
+  <label for="liczba1">Liczba 1:</label>
+  <input type="text" id="liczba1">
+  <label for="liczba1">Liczba 2:</label>
+  <input type="text" id="liczba2">
+  <button onclick="dodaj();">Dodaj</button>
+  <button onclick="odejmij();">Odejmij</button>
+  <button onclick="podziel();">Podziel</button>
+  <button onclick="pomnoz();">Pomnóż</button>
+</body>
+
+<script>
+  function dodaj(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;
+  alert("Suma: "+(parseInt(liczba1)+parseInt(liczba2)));
+}
+
+function odejmij(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;
+  alert("Roznica: "+(parseInt(liczba1)-parseInt(liczba2)));
+}
+
+function podziel(){
+
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;
+  if(liczba2==0){
+    alert("Nie dzielimy przez 0!");
+  }
+  else alert("Iloraz: "+(parseInt(liczba1)/parseInt(liczba2)));
+}
+
+function pomnoz(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;
+  alert("Iloczyn: "+(parseInt(liczba1)*parseInt(liczba2)));
+}
+</script>
+
+</html>

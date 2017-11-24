@@ -1,0 +1,71 @@
+git pull - pobiera zmieny z repo zdalnego i wgrywa zmiany, nowe
+
+git add . - dodaje wszystkie zmiany do repo
+git commit -m "komentarz" - tworzy „zdjęcie"
+git push - wysyła zdjęcie do repo zdalnego
+
+cellpadding-odstep miedzy tekstem a krawedzia
+cellspacing-pdstep miedzy komorka a druga komorka 
+
+
+
+
+
+
+
+
+
+
+variable - zmienna
+var - deklaracja zmiennych
+concatenation/concatenate - łączenie ciągów
+
+
+
+
+<h1>Witam witam!</h1>
+<label for="liczba1">Liczba 1:</label>
+<input type="text" id="liczba1">
+<label for="liczba1">Liczba 2:</label>
+<input type="text" id="liczba2">
+<button onclick="dodaj();">Dodaj</button>
+<button onclick="odejmij();">Odejmij</button>
+<button onclick="podziel();">Podziel</button>
+<button onclick="pomnoz();">Pomnóż</button>
+
+
+
+
+h1 {background-color: red;}
+
+
+
+
+
+function dodaj(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;  
+  alert("Suma: "+(parseInt(liczba1)+parseInt(liczba2)));
+}
+
+function odejmij(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;  
+  alert("Roznica: "+(parseInt(liczba1)-parseInt(liczba2)));
+}
+
+function podziel(){
+
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value; 
+  if(liczba2==0){
+    alert("Nie dzielimy przez 0!");
+  }
+  else alert("Iloraz: "+(parseInt(liczba1)/parseInt(liczba2)));
+}
+
+function pomnoz(){
+  var liczba1 = document.getElementById("liczba1").value;
+  var liczba2 = document.getElementById("liczba2").value;  
+  alert("Iloczyn: "+(parseInt(liczba1)*parseInt(liczba2)));
+}
