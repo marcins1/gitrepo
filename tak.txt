@@ -69,3 +69,7 @@ function pomnoz(){
   var liczba2 = document.getElementById("liczba2").value;  
   alert("Iloczyn: "+(parseInt(liczba1)*parseInt(liczba2)));
 }
+
+
+
+CSV (ang. comma-separated values, wartości rozdzielone przecinkiem) – format przechowywania danych w plikach tekstowych i odpowiadający mu typ MIME text/csv.
