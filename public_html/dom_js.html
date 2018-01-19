@@ -1,0 +1,25 @@
+<html>
+<p id="akapit1">Pierwszy akapit</p>
+<p class="wazne">Drugi akapit</p>
+<p class="wazne">Trzeci akapit</p>
+<p>Czwarty akapit</p>
+<h2 class="wazne">Wazny naglowek</h2>
+<script>
+  var akapit1= document.getElementById("akapit1");
+  akapit1.innerHTML="Witaj <b>na stronie</b>!";
+  // var tekst=akapit1.innerHTML;
+  // console.log(tekst);
+
+  var akapity=document.getElementsByTagName("p");
+  console.log(akapity.length);
+
+  // for(i=0;i<akapity.length;i++){
+  //   console.log(akapity[i].innerHTML);
+  // }
+
+  akapity[1].style.backgroundColor="#ff00ff";
+
+  var wazne=document.getElementsByClassName("wazne");
+  console.log(wazne[0].nodeName);
+</script>
+</html>
