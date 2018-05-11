@@ -9,14 +9,6 @@ body {
   background-color: rgb(38, 45, 196);
 }
 
-.gallery {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
-}
-
 .gallery-item {
     margin: 10px;
 }
