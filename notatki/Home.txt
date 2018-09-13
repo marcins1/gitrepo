@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-06T08:28:34+02:00
+
+====== Home ======
+Created czwartek 06 września 2018
+
+Języki interpretowane:
+np [[JavaScript]]
+
+Języki kompilowane:
+np C++
