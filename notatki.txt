@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-10-01T07:27:38+02:00
+
+====== notatki ======
+Created poniedziałek 01 października 2018
+
+* id INTEGER PRIMARY KEY AUTONUMERIC
+* UNIQUE - unikalność wartości w kolumnie
+* NOT NULL - nie dopuszczenie pustych wartości
+* DEFAULT - wartość domyślna:"", 10%
+* FOREIGN KEY - definicja KLUCZA OBCEGO
+* nazwa_pola REFERENCES tabela(inne_pole)
+* CHECK num1 > num2 - testowanie wartości
+
+ON DELETE CASCADE-
+Razem z wierszem tabeli nadrzędnej zostają usunięte wszystkie wiersze tabeli podrzędnej, w których wartość klucza obcego wskazuje na usuwany wiersz (pod warunkiem, że usunięcie tych wierszy jest możliwe bez naruszenia innych więzów referencyjncyh).
+
+ON DELETE SET NULL/SET DEFAULT
