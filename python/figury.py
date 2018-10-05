@@ -30,34 +30,44 @@ def rysujpelnyprostokat(rozmiar, rozmiar2, znak):
         
 def rysujpustyprostokat(rozmiar, rozmiar2, znak):
     for i in range(rozmiar2):
-        if i == 0 or i == rozmiar2 - 1:
-            for j in range(rozmiar):
+        for j in range(rozmiar):
+            if j == 0 or j == rozmiar - 1 or i == 0 or i == rozmiar2 -1:
                 print(znak, end='')
-        else:
-            for j in range(rozmiar):
-                if j == 0 or j == rozmiar - 1:
-                    print(znak, end='')
-                else:
-                    print(" ", end='')
+            else:
+                print(" ", end='')
         print()
 
-def rysujchoinke(rozmiar, rozmiar2, znak):
-    for i in range(rozmiar2):
-        licznik = 0
-        while licznik < rozmiar:
+def rysujchoinke(wysokosc, znak):
+    for i in range(wysokosc):
+        for j in range(i + 1):
             print(znak, end='')
-            licznik += 1
         print()
 
+def rysujchoinke2(wysokosc, znak):
+    for i in range(wysokosc):
+        for j in range(wysokosc - i):
+            print(znak, end='')
+        print()
+        
+def rysujtrojkat(wysokosc, znak):
+    for i in range(wysokosc):
+        for j in range():
+            print(znak, end='')
+        print()
+        
 def main(args):
-    x = int(input("Rozmiar x: "))
+    x = int(input("Rozmiar x / wysokosc: "))
     y = int(input("Rozmiar y: "))
     znak = input("Wprowadź znak: ")
     rysujpelnyprostokat(x, y, znak)
     print()
     rysujpustyprostokat(x, y, znak)
     print()
-    rysujchoinke(x, y, znak)
+    rysujchoinke(x, znak)
+    print()
+    rysujchoinke2(x, znak)
+    print()
+    rysujtrojkat(x, znak)
     return 0
 
 if __name__ == '__main__':
