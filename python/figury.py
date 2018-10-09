@@ -50,10 +50,13 @@ def rysujchoinke2(wysokosc, znak):
         print()
         
 def rysujtrojkat(wysokosc, znak):
-    for i in range(wysokosc):
-        for j in range():
-            print(znak, end='')
-        print()
+	for i in range(wysokosc):
+		for j in range(i + wysokosc):
+			if j < wysokosc - i - 1:
+				print(" ", end='')
+			else:
+				print(znak, end='')
+		print()
         
 def main(args):
     x = int(input("Rozmiar x / wysokosc: "))
