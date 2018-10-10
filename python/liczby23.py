@@ -15,7 +15,7 @@ def liczby2():
             if i!=j:
                 print(" {}{} ".format(i, j), end="")
                 licznik += 1
-    return licznik  
+    return licznik 
       
 def liczby2v2():
     licznik = 0
@@ -26,10 +26,22 @@ def liczby2v2():
             licznik += 1
     return licznik
 
+def liczby3():
+    licznik = 0
+    for i in range(1,10):
+        for j in range(10):
+            for k in range(10):
+                if not (i==j and i==k and k==j):
+                    print(" {}{}{} ".format(i, j, k), end="")
+                    licznik += 1
+    return licznik
+    
 def main(args):
     print("Liczb 2-cyfrowych:", liczby2())
     print()
     print("Liczb 2-cyfrowych:", liczby2v2())
+    print()
+    print("Liczb 3-cyfrowych:", liczby3())
     return 0
 
 if __name__ == '__main__':
