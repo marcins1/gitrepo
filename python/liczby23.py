@@ -31,7 +31,7 @@ def liczby3():
     for i in range(1,10):
         for j in range(10):
             for k in range(10):
-                if not (i==j and i==k and k==j):
+                if i!=j and i!=k and k!=j:
                     print(" {}{}{} ".format(i, j, k), end="")
                     licznik += 1
     return licznik
