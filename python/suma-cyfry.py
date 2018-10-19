@@ -29,6 +29,12 @@
         # ~liczba = int(liczba / 10)
     # ~return suma
 
+def sumuj_cyfry2(liczba):
+    suma = 0
+    for cyfra in str(liczba):
+        suma += int(cyfra)
+    return suma
+
 def main(args):
     # ~liczba = 0
     # ~while liczba < 10 and liczba > -10:
@@ -38,13 +44,18 @@ def main(args):
     # ~print("Suma cyfr:", sumujcyfry(liczba))
     
     
+    #liczba = "0"
+    #while int(liczba) < 10:
+        #liczba = input("Wprowadź liczbę większą od 9: ")
+    #suma = 0
+    #for i in range(len(liczba)):
+    #    suma += int(liczba[i])
+    #print("Suma cyfr:", suma)
+
     liczba = "0"
     while int(liczba) < 10:
         liczba = input("Wprowadź liczbę większą od 9: ")
-    suma = 0
-    for i in range(len(liczba)):
-        suma += int(liczba[i])
-    print("Suma cyfr:", suma)
+    print("Suma cyfr:", sumuj_cyfry2(liczba))
     return 0
 
 if __name__ == '__main__':
