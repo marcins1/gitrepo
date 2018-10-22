@@ -1,0 +1,59 @@
+tabela uczniowie:
+id, 
+imie
+nazwisko
+plec
+id_klasa
+egz_hum
+egz_mat
+egz_jez
+
+tabela klasy:
+id
+klasa
+rok_naboru
+rok_matury
+
+tabela przedmioty:
+id
+przedmiot
+imie_naucz
+nazwisko_naucz
+plec_naucz
+
+tabela oceny:
+id
+datad
+id_uczen
+id_przedmiot
+ocena
+
+DROP TABLE IF EXISTS uczniowie;
+CREATE TABLE uczniowie (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	imie TEXT,
+	nazwisko TEXT
+    plec
+    id_klasa
+    egz_hum
+    egz_mat
+    egz_jez
+);
+
+DROP TABLE IF EXISTS klasy;
+CREATE TABLE klasy (
+    id
+    klasa
+    rok_naboru
+    rok_matury
+    FOREIGN KEY(id) REFERENCES uczniowie(id),
+);
+
+DROP TABLE IF EXISTS przedmioty;
+CREATE TABLE przedmioty (
+    id
+    przedmiot
+    imie_naucz
+    nazwisko_naucz
+    plec_naucz
+);
