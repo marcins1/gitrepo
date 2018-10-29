@@ -31,7 +31,7 @@ CREATE TABLE przedmioty (
 
 DROP TABLE IF EXISTS oceny;
 CREATE TABLE oceny (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     datad DATE,
     id_uczen INTEGER NOT NULL,
     id_przedmiot INTEGER NOT NULL,
