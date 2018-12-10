@@ -22,9 +22,54 @@ def kw02():
     for obj in query:
         print(obj.nazwisko, obj.imie, obj.klasa.nazwa)
 
+def kw03():
+    query = (Ocena
+        .select(Ocena.uczen.nazwisko, fn.AVG(Ocena.ocena).alias('ile_ocen'))
+        .join(Uczen)
+        .group_by(Ocena.uczen.nazwisko)
+        .order_by(SQL('ile_ocen'))
+    )
+    for obj in query:
+        print(obj.uczen.nazwisko, obj.ile_ocen)
+        
+def kw04():
+    query = (Ocena
+        .select(Ocena.uczen.nazwisko, Ocena.przedmiot.przedmiot, fn.AVG(Ocena.ocena).alias('ile_ocen'))
+        .join(Uczen)
+        .switch(Ocena)
+        .join(Przedmiot)
+        .where(Ocena.uczen.nazwisko == 'Szymczak')
+        .group_by(Ocena.przedmiot.przedmiot)
+        .order_by(SQL('ile_ocen').asc())
+    )
+    for obj in query:
+        print(obj.uczen.nazwisko, obj.przedmiot.przedmiot, obj.ile_ocen)
+        
+def kw05():
+    """Średnie z poszczególnych przedmiotów"""
+    query = (Ocena
+        .select(Ocena.przedmiot.przedmiot, fn.AVG(Ocena.ocena).alias('ile_ocen'))
+        .join(Przedmiot)
+        .group_by(Ocena.przedmiot.przedmiot)
+        .order_by(SQL('ile_ocen').asc())
+    )
+    for obj in query:
+        print(obj.przedmiot.przedmiot, obj.ile_ocen)
+        
+def kw06():
+    """Ilość uczniów w klasach uporządkowana rosnąco"""
+    query = (Klasa
+        .select(Klasa.nazwa, fn.COUNT(Uczen.imie).alias('ilosc_uczniow'))
+        .join(Uczen)
+        .group_by(Klasa.nazwa)
+        .order_by(Klasa.nazwa.asc())
+    )
+    for obj in query:
+        print(obj.nazwa, obj.ilosc_uczniow)
+
 def main(args):
     baza.connect()
-    kw02()
+    kw06()
     baza.close()
     return 0
 
