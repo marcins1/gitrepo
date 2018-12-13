@@ -23,34 +23,29 @@ void drukuj(int t[], int roz){
     cout << endl;
 }
 
+void zamien(int &a, int &b){
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+
 void sort_bubble(int tab[], int n){
-    for(;;){
-        for(;;){
-            //~if(tab[i] > tab[i+1]){
-                //~zamien1
-            //}
+    for(int i = 0; i < n-1; i++){
+        for(int j = 0; j < n-i-1; j++){
+            if(tab[j] > tab[j+1]){
+                zamien(tab[j], tab[j+1]);
+            }
         }
     }
 }
 
-void zamien(int &a, int &b){
-    cout << a << " " << b << endl;
-    int tmp = a;
-    a = b;
-    b = tmp;
-    cout << a << " " << b << endl; 
-}
-
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
 	int roz = 20;
     int tab[roz];
     wypelnij(tab, roz);
     drukuj(tab, roz);
-    cout << endl;
-    tab[0] = 7;
-    tab[1] = 5;
-    zamien(tab[0], tab[1]);
+    sort_bubble(tab, roz);
+    drukuj(tab, roz);
 	return 0;
 }
 
