@@ -1,5 +1,5 @@
 /*
- * sortowanie.cpp
+  sortowanie.cpp
  */
 
 
@@ -23,35 +23,28 @@ void drukuj(int t[], int roz){
     cout << endl;
 }
 
-//~void zamien2(int &a, int &b){
-    //~int tmp = a;
-    //~a = b;
-    //~b = tmp;
-//~}
-
-void zamien(int tab[], int i){
-    int tmp = tab[i];
-    tab[i] = tab[i+1];
-    tab[i+1] = tmp;
+void zamien(int &a, int &b){
+    int tmp = a;
+    a = b;
+    b = tmp;
 }
 
 void sort_bubble(int tab[], int n){
     for(int i = 0; i < n-1; i++){
         for(int j = 0; j < n-i-1; j++){
-            if(tab[j] < tab[j+1]){
-                zamien(tab, j);
+            if(tab[j] > tab[j+1]){
+                zamien(tab[j], tab[j+1]);
             }
         }
     }
 }
 
 int main(int argc, char **argv){
-	int roz = 75000;
+	int roz = 20;
     int tab[roz];
     wypelnij(tab, roz);
-    //drukuj(tab, roz);
+    drukuj(tab, roz);
     sort_bubble(tab, roz);
-    cout << endl;
     drukuj(tab, roz);
 	return 0;
 }

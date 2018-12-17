@@ -12,13 +12,14 @@ class BazaModel(Model):
     class Meta:
         database = baza
 
+class Kategoria(BazaModel):
+    kategoria = CharField(null=False)
 
 class Pytanie(BazaModel):
-    pytanie = CharField(null=False, nique=True)
-    odpok = CharField()
-
-
+    pytanie = CharField(null=False)
+    id_kat = ForeignKeyField(Kategoria, related_name='Pytanie')
+    
 class Odpowiedz(BazaModel):
-    pnr = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpowiedz = CharField(null=False)
+    id_p = ForeignKeyField(Pytanie, related_name='Odpowiedz')
     odpok = BooleanField(default=False)

@@ -4,6 +4,7 @@
 #  baza.py
 import os
 import csv
+from modele import *
 
 def czy_jest(plik):
     """Funkcja sprawdza istnienie pliku na dysku"""
@@ -13,7 +14,7 @@ def czy_jest(plik):
     return True
 
 
-def dane_z_pliku(nazwa_pliku, separator=','):
+def dane_z_pliku(nazwa_pliku, separator=';'):
     dane = []  # pusta lista na dane
     if not czy_jest(nazwa_pliku):
         return dane
@@ -27,6 +28,7 @@ def dane_z_pliku(nazwa_pliku, separator=','):
     
 def dodaj_dane():
     dane = {
+        Kategoria: 'kategorie',
         Pytanie: 'pytania',
         Odpowiedz: 'odpowiedzi'
     }
@@ -38,6 +40,12 @@ def dodaj_dane():
             model.insert_many(wpisy, fields=pola).execute()
 
 def main(args):
+    if os.path.exists(baza_plik):
+        os.remove(baza_plik)
+    baza.connect()
+    baza.create_tables([Kategoria, Pytanie, Odpowiedz])
+    dodaj_dane()
+    baza.close()
     return 0
 
 if __name__ == '__main__':
