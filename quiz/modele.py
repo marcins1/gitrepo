@@ -17,9 +17,13 @@ class Kategoria(BazaModel):
 
 class Pytanie(BazaModel):
     pytanie = CharField(null=False)
-    id_kat = ForeignKeyField(Kategoria, related_name='Pytanie')
+    id_kat = ForeignKeyField(Kategoria, related_name='pytania')
     
 class Odpowiedz(BazaModel):
     odpowiedz = CharField(null=False)
-    id_p = ForeignKeyField(Pytanie, related_name='Odpowiedz')
+    id_p = ForeignKeyField(Pytanie, related_name='odpowiedzi')
     odpok = BooleanField(default=False)
+
+if __name__ == '__main__':
+    import sys
+    sys.exit(main(sys.argv))
