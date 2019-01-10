@@ -59,24 +59,24 @@ void sort_selection(int tab[], int n){
 }
 
 void sort_insert(int tab[], int n){
-    int i, el, k, j;
-    for(i = 1; i < n - 1; i++){
+    int i, el, k;
+    for(i = 1; i < n; i++){
         el = tab[i];
-        k = i - 1; // Indeks porównywanego elementu z części posortowanej 
+        k = i - 1;
         while(k >= 0 && tab[k] > el){
-            zamien2(tab[k], tab[k-1]);
+            tab[k+1]=tab[k];
             k--;
         }
-        ;
+        tab[k+1]=el;
     }
 }
 
 int main(int argc, char **argv){
-	int roz = 25;
+	int roz = 10;
     int tab[roz];
     wypelnij(tab, roz);
     drukuj(tab, roz);
-    sort_selection(tab, roz);
+    sort_insert(tab, roz);
     cout << endl;
     drukuj(tab, roz);
 	return 0;
