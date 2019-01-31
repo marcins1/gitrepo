@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-01-31T07:29:27+01:00
+
+====== Systemy liczbowe ======
+Created czwartek 31 stycznia 2019
+
+===== Systemy pozycyjne =====
+
+==== System o podstawie 2 ====
+
+
+234(7)=2*7^2 + 3*7^1+4*5^0=98+21+4=123
+
+Konwersja liczby dziesiętnej
+143/2=71 reszta 1
+71/2=35 reszta 1
+35/2=17 reszta 1
+17/2=8 reszta 1
+8/2=4 reszta 0
+4/2=2 reszta 0
+2/2=1 reszta 0
+1/2=0 reszta 1
+
+10001111
+
+237/2=118 reszta 1
+118/2=59 reszta 0
+59/2=29 reszta 1
+29/2=14 reszta 1
+14/2=7 reszta 0
+7/2=3 reszta 1
+3/2=1 reszta 1
+1/2=0 reszta 1
