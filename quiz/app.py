@@ -2,22 +2,20 @@
 # -*- coding: utf-8 -*-
 #
 #  app.py
-
-
 from flask import g
 from modele import *
 from views import *
 
 app.config.update(dict(
-    SECRET_KEY = 'h2os04chgut',
-    TITLE = 'Aplikacja Quiz'
+    SECRET_KEY='bardzosekretnyklucz',
+    TITLE='Aplikacja Quiz',
 ))
 
 @app.before_request
 def before_request():
     g.db = baza
     g.db.connect()
-    
+
 @app.after_request
 def after_request(response):
     g.db.close()
@@ -25,4 +23,3 @@ def after_request(response):
 
 if __name__ == '__main__':
     app.run(debug=True)
-

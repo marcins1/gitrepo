@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 #
 #  forms.py
-#
 
 from flask_wtf import FlaskForm
 from wtforms import HiddenField, StringField, BooleanField
@@ -17,9 +16,10 @@ class OdpForm(FlaskForm):
     pytanie = HiddenField()
     odpowiedz = StringField('Odpowiedź:', validators=[Required(message=blad1)])
     odpok = BooleanField('Poprawna:')
-    
+
 class DodajForm(FlaskForm):
     id = HiddenField()
     pytanie = StringField('Treść pytania:', validators=[Required(message=blad1)])
-    kategorie = SelectField('Kategoria', coerce=int)
+    kategoria = SelectField('Kategoria', coerce=int)
     odpowiedzi = FieldList(FormField(OdpForm), min_entries=3)
+

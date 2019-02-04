@@ -1,0 +1,9 @@
+{% extends "szablon.html" %}
+{% block tytul %}QUIZ – Strona główna{% endblock %}
+{% block h1 %}Witaj!{% endblock %}
+{% block tresc %}
+    <div class="alert-warning">
+        Przykro nam, ale podany zasób nie istnieje.
+        Przejdź do <a href="{{ url_for('index') }}">Link do strony głównej</a>
+    </div>
+{% endblock %}

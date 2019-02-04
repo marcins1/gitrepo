@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  model_orm.py
+#  modele.py
 
 from peewee import *
 
 baza_plik = 'quiz.db'
-############## MODEL
-baza = SqliteDatabase(baza_plik)
+baza = SqliteDatabase(baza_plik)  # instancja bazy
+
+### MODELE #
 class BazaModel(Model):
     class Meta:
         database = baza
@@ -17,12 +18,13 @@ class Kategoria(BazaModel):
 
 class Pytanie(BazaModel):
     pytanie = CharField(null=False)
-    id_kat = ForeignKeyField(Kategoria, related_name='pytania')
-    
+    kategoria = ForeignKeyField(Kategoria, related_name='pytania')
+
 class Odpowiedz(BazaModel):
     odpowiedz = CharField(null=False)
-    id_p = ForeignKeyField(Pytanie, related_name='odpowiedzi')
-    odpok = BooleanField(default=False)
+    pytanie = ForeignKeyField(Pytanie, related_name='odpowiedzi')
+    odpok = IntegerField(default=0)
+
 
 if __name__ == '__main__':
     import sys
