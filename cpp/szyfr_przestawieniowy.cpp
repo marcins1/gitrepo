@@ -4,6 +4,7 @@
 
 
 #include <iostream>
+#include <string.h> // strlen()
 using namespace std;
 
 #define MAKS 100
@@ -22,17 +23,10 @@ void deszyfruj(char t[],int k){
 }
 
 void szyfruj(char t[],int k){
-    cout << "Szyfracja: "; 
-    int kod=0;
-    for(int i = 0; t[i] != '\0'; i++){
-        if (!(t[i]==' ')){
-            kod=(int)t[i] + k;
-            if(kod > 122) kod-=26;
-            t[i]=(char)kod;
-            cout << t[i];
-        } else cout << ' ';
-    }
-    cout << endl;
+    int ile = strlen(t);
+    //Ile znakow uzupelnic kropkami
+    //Uzupelnic tekst kropkami
+    ...
 }
 
 void szyfruj2(char t[],int k){
