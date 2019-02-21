@@ -1,5 +1,5 @@
 /*
- * szyfr_cezara.cpp
+ * szyfr_przestawieniowy.cpp
  */
 
 
@@ -22,14 +22,14 @@ void deszyfruj(char t[],int k){
     }
 }
 
-void szyfruj(char t[],int k){
-    int ile = strlen(t);
-    //Ile znakow uzupelnic kropkami
-    //Uzupelnic tekst kropkami
-    ...
-}
+//~void szyfruj3(char t[],int k){
+    //~int ile = strlen(t);
+    //~Ile znakow uzupelnic kropkami
+    //~Uzupelnic tekst kropkami
+    //~...
+//~}
 
-void szyfruj2(char t[],int k){
+void szyfruj(char t[],int k){
     int i = 0;
     int kod=0;
     cout << "Szyfracja: "; 
@@ -51,14 +51,6 @@ void szyfruj2(char t[],int k){
     cout << endl;
 }
 
-void zamien(char t[]){
-    int kod=0;
-    for(int i = 0; t[i] != '\0'; i++){
-        kod=(int)t[i];
-        if (kod > 64 && kod < 91) t[i]=(char)kod+32;
-    }
-}
-
 int main(int argc, char **argv)
 {
 	char tekst[MAKS];
@@ -69,9 +61,9 @@ int main(int argc, char **argv)
     cout << "Podaj klucz: ";
     cin >> klucz;
     klucz = klucz % 26;
-    //zamien(tekst);
-    szyfruj2(tekst, klucz);
-    //deszyfruj(tekst, klucz);
+    zamien(tekst);
+    szyfruj(tekst, klucz);
+    deszyfruj(tekst, klucz);
 	return 0;
 }
 
