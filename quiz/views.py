@@ -23,16 +23,16 @@ def lista():
 @app.route("/quiz", methods=['GET', 'POST'])
 def quiz():
     print(request.form)
-    
+
     if request.method == 'POST':
         wynik = 0
         for pid, oid in request.form.items():
             if Odpowiedz().get(Odpowiedz.id == int(oid)).odpok:
                 wynik += 1
-        
+
         flash('Poprawnych odpowiedzi: {}'.format(wynik), 'info')
         return redirect(url_for('index'))
-                
+
     pytania = Pytanie.select().join(Odpowiedz).distinct()
     return render_template('quiz.html', pytania=pytania)
 
@@ -51,7 +51,7 @@ def dodaj():
     """Dodawanie pytań i odpowiedzi"""
     form = DodajForm()
     form.kategoria.choices = [(k.id, k.kategoria) for k in Kategoria.select()]
-    
+
     if form.validate_on_submit():
         print(form.data)
         p = Pytanie(pytanie=form.pytanie.data, kategoria=form.kategoria.data)
@@ -61,10 +61,10 @@ def dodaj():
             odp.save()
         flash("Dodano pytanie: {}".format(form.pytanie.data))
         return redirect(url_for('lista'))
-        
+
     elif request.method == 'POST':
         flash_errors(form)
-    
+
     return render_template('dodaj.html', form=form)
 
 def get_or_404(pid):
